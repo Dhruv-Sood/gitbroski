@@ -1,4 +1,7 @@
-# Binaries for programs and plugins
+package ignore
+
+func Golang() string {
+	return `# Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
@@ -26,4 +29,5 @@ go.work.sum
 
 # Editor/IDE
 # .idea/
-# .vscode/
+# .vscode/`
+}
