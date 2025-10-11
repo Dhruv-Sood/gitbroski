@@ -3,7 +3,7 @@ package commands
 
 import (
 	"gitbroski/internal/services"
-	"gitbroski/utils/logger"
+	"strings"
 )
 
 func init() {
@@ -11,10 +11,9 @@ func init() {
 }
 
 func Ignore(args ...string) {
-	if len(args) == 0 {
-		logger.Error("No arguments provided to ignore command....Generating empty")
-		services.Ignore("")
-		return
+	lang := ""
+	if len(args) > 0 {
+		lang = strings.ToLower(strings.TrimSpace(args[0]))
 	}
-	services.Ignore(args[0])
+	services.Ignore(lang)
 }

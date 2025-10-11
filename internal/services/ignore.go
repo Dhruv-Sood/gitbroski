@@ -23,11 +23,25 @@ func Ignore(lang string) {
 		err := os.WriteFile(gitignorePath, []byte(pythonIgnoreTemplate), 0o600)
 		if err != nil {
 			logger.Error("Error writing .gitignore: " + err.Error())
+			return
 		}
+		logger.Success("Python .gitignore successfully created at " + gitignorePath)
+	case "node", "nodejs", "js", "javascript":
+		nodeIgnoreTemplate := ignore.NodeJS()
+		err := os.WriteFile(gitignorePath, []byte(nodeIgnoreTemplate), 0644)
+		if err != nil {
+			logger.Error("Error writing .gitignore: " + err.Error())
+			return
+		}
+		logger.Success("Node.js .gitignore successfully created at " + gitignorePath)
 	default:
 		err := os.WriteFile(gitignorePath, []byte{}, 0o600)
 		if err != nil {
 			logger.Error("Error creating empty .gitignore: " + err.Error())
+			return
+		}
+		if lang != "" {
+			logger.Warning("Unknown language '" + lang + "'. Created empty .gitignore at " + gitignorePath)
 		}
 	}
 }
