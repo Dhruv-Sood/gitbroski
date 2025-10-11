@@ -16,11 +16,16 @@ func Ignore(lang string) {
 	}
 
 	gitignorePath := filepath.Join(rootDir, ".gitignore")
-
 	switch lang {
 	case "python":
 		pythonIgnoreTemplate := ignore.Python()
 		err := os.WriteFile(gitignorePath, []byte(pythonIgnoreTemplate), 0o600)
+		if err != nil {
+			logger.Error("Error writing .gitignore: " + err.Error())
+		}
+	case "go":
+		goIgnoreTemplate := ignore.Golang()
+		err := os.WriteFile(gitignorePath, []byte(goIgnoreTemplate), 0o600)
 		if err != nil {
 			logger.Error("Error writing .gitignore: " + err.Error())
 		}

@@ -1,70 +1,87 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
 *.so
-*.dylib
 
-# Test binary, built with `go test -c`
-*.test
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Dependency directories (remove the comment below to include it)
-vendor/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
-# Go workspace file
-go.work
+# Translations
+*.mo
+*.pot
 
-# Build output
-/bin/
-/dist/
-/build/
-
-# IDE - VSCode
-.vscode/
-*.code-workspace
-
-# IDE - GoLand/IntelliJ
-.idea/
-*.iml
-*.iws
-
-# IDE - Vim
-*.swp
-*.swo
-*~
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Operating System Files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.bak
+# Django Stuff
 *.log
+local_settings.py
+db.sqlite3
 
-# Air - live reload for Go apps
-tmp/
+# Flask stuff
+instance/
+.webassets-cache
 
-# Database files (if storing locally)
-*.db
-*.sqlite
-*.sqlite3
+# Jupyter Notebook stuff
+.ipynb_checkpoints
 
-# Configuration files with sensitive data (uncomment if needed)
-# config.json
-# config.yaml
+# Virtual environment
+.venv/
+venv/
+env/
+/venv
+/env
 
-gitbroski
+# Secrets/Configuration (should almost always be ignored)
+.env
+.flaskenv
+settings.ini
+
+# IDE-specific directories and files
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
