@@ -1,0 +1,40 @@
+name: Publish Gitbroski CLI to npm
+
+on:
+  workflow_run:
+    workflows: ["Go Release"]
+    types:
+      - completed
+
+jobs:
+  publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Build binaries
+        run: |
+          mkdir -p bin
+          GOOS=linux GOARCH=amd64 go build -o bin/gitbroski-linux ./cmd
+          GOOS=darwin GOARCH=amd64 go build -o bin/gitbroski-intel-darwin ./cmd
+          GOOS=darwin GOARCH=arm64 go build -o bin/gitbroski-darwin ./cmd
+          GOOS=windows GOARCH=amd64 go build -o bin/gitbroski-windows.exe ./cmd
+
+      - name: Make executables
+        run: chmod +x bin/*
+
+      - name: Publish to npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -35,3 +35,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           semantic-release
+
+      - name: Get latest release tag
+        id: get_tag
+        run: |
+          RELEASE_TAG=$(git describe --tags --abbrev=0)
+          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
+
+      - name: Update package.json version
+        run: |
+          VERSION=${RELEASE_TAG#v}  # remove leading "v"
+          echo "Updating package.json to version $VERSION"
+          jq --arg v "$VERSION" '.version=$v' package.json > package.tmp.json
+          mv package.tmp.json package.json
+
+      - name: Commit updated package.json
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add package.json
+          git commit -m "chore: update package.json version to $VERSION"
+          git push origin main
+
