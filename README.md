@@ -19,6 +19,17 @@ npm install -g gitbroski
 ## Usage
 Here are the key commands for gitbroski to enhance your Git workflow:
 
+#### 0. Show Version
+
+Print the installed gitbroski version. Supports aliases `version`, `--version`, and `-v`.
+```bash
+gitbroski --version
+# or
+gitbroski version
+# or
+gitbroski -v
+```
+
 #### 1. Open the Remote Repository
 
 Quickly jump from your command line to the GitHub or GitLab page for your current project.
@@ -56,7 +67,11 @@ go mod tidy
 
 ### 3. Build the Project
 ```bash
+# Basic build (version defaults to "dev")
 go build -o gitbroski ./cmd
+
+# Optional: embed version at build time
+go build -ldflags "-X gitbroski/internal/version.Version=$(jq -r .version package.json 2>/dev/null || echo 0.0.0)" -o gitbroski ./cmd
 ```
 
 ### 4. (Optional) Create a Symlink for Global Use
