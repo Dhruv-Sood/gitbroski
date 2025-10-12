@@ -3,7 +3,6 @@ package main
 
 import (
 	"gitbroski/internal/commands"
-	"gitbroski/internal/version"
 	"gitbroski/utils/logger"
 	"os"
 )
@@ -16,12 +15,6 @@ func main() {
 	}
 
 	cmd := os.Args[1]
-
-	// Global version flags
-	if cmd == "--version" || cmd == "-v" || cmd == "version" {
-		logger.Text("gitbroski " + version.Version)
-		return
-	}
 	handler, exists := commands.Registry[cmd]
 
 	if !exists {
