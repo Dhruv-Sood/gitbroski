@@ -85,3 +85,14 @@ sudo ln -s /full/path/to/gitbroski /usr/local/bin/gitbroski
 
 ## License
 MIT
+
+
+
+## 🪟 Windows Setup
+
+Follow these steps to set up **GitBroski** on Windows:
+
+### 1️⃣ Clone the repository
+```powershell
+git clone https://github.com/Diksha78-bot/gitbroski.git
+cd gitbroski
