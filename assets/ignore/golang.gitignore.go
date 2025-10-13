@@ -8,6 +8,9 @@ func Golang() string {
 *.so
 *.dylib
 
+# Distribution / packaging
+build/
+ 
 """ Test binary, built with go test -c"""
 *.test
 
@@ -24,10 +27,39 @@ profile.cov
 go.work
 go.work.sum
 
-# env file
-.env
+# Flask stuff
+instance/
+.webassets-cache
 
-# Editor/IDE
-# .idea/
-# .vscode/`
+
+# Jupyter Notebook stuff
+.ipynb_checkpoints
+
+# Virtual environment
+.venv/
+venv/
+env/
+/venv
+/env
+
+# Secrets/Configuration (should almost always be ignored)
+.env
+.flaskenv
+settings.ini
+
+# IDE-specific directories and files
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+`
 }
