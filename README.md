@@ -32,7 +32,8 @@ gitbroski ignore <Language>
 ```
 Currently, this command supports:
 - python
-- (Issues are open to add support for node.js, golang, and many more languages!)
+- go
+- (Issues are open to add support for node.js, and many more languages!)
 
 #### 3. Easy Empty Commit
 Create an empty Git commit (useful for triggering CI/CD pipelines without code changes) and add an optional message.
