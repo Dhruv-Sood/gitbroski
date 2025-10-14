@@ -77,9 +77,8 @@ npm install -g gitbroski
 			```
 		- Git Bash (Admin):
 			```bash
-			ln -s /c/Users/Diksha/gitbroski/gitbroski.exe /usr/bin/gitbroski
+			ln -s /c/Users/<YourUserName>/gitbroski/gitbroski.exe /usr/bin/gitbroski
 			```
-		> ⚠️ Replace `/c/Users/Diksha/gitbroski/` with your actual path.
 4. **Verify Installation**
 		```bash
 		gitbroski --version
