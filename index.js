@@ -3,8 +3,8 @@ const { execFile } = require("child_process");
 const path = require("path");
 const os = require("os");
 
-const platform = os.platform(); 
-const arch = os.arch(); 
+const platform = os.platform();
+const arch = os.arch();
 
 let bin;
 
