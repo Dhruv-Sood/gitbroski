@@ -1,54 +1,35 @@
-bash
-gitbroski open
-bash
-gitbroski ignore <Language>
-bash
-gitbroski empty commit <your-Message>
-git clone https://github.com/gitbroskie/gitbroski.git
-bash
-go mod tidy
-go build -o gitbroski ./cmd
-git clone https://github.com/gitbroskie/gitbroski.git
-powershell
-go build -o gitbroski.exe ./cmd
-gitbroski --version
-bash
-go mod tidy
-bash
-go build -o gitbroski ./cmd
-bash
 # Git-Broski 🚀
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/gitbroskie/gitbroski/main/assets/logo.png" alt="GitBroski Logo" width="120"/>
+  <img src="https://raw.githubusercontent.com/gitbroskie/gitbroski/main/assets/logo.png" alt="GitBroski Logo" width="120"/>
 </p>
 
 <p align="center">
-	<b>Broski for your Git!</b><br>
-	<i>A CLI tool to perform various manual tasks with single commands</i>
+  <strong>Broski for your Git!</strong><br>
+  <em>A CLI tool to perform various manual tasks with single commands</em>
 </p>
 
 <p align="center">
-	<a href="https://github.com/gitbroskie/gitbroski/releases"><img src="https://img.shields.io/github/v/release/gitbroskie/gitbroski?style=flat-square" alt="Release"></a>
-	<a href="https://github.com/gitbroskie/gitbroski/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/gitbroskie/gitbroski?style=flat-square" alt="License"></a>
-	<a href="https://github.com/gitbroskie/gitbroski/issues"><img src="https://img.shields.io/github/issues/gitbroskie/gitbroski?style=flat-square" alt="Issues"></a>
+  <a href="https://github.com/gitbroskie/gitbroski/releases"><img src="https://img.shields.io/github/v/release/gitbroskie/gitbroski?style=flat-square" alt="Release"></a>
+  <a href="https://github.com/gitbroskie/gitbroski/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/gitbroskie/gitbroski?style=flat-square" alt="License"></a>
+  <a href="https://github.com/gitbroskie/gitbroski/issues"><img src="https://img.shields.io/github/issues/gitbroskie/gitbroski?style=flat-square" alt="Issues"></a>
 </p>
 
 ---
 
-## 🌐 Overview
+## Overview
 
 Git-Broski is a command-line tool that streamlines your Git workflow by automating common tasks with simple commands.
 
-> [Project Notion Page](https://gratis-neon-644.notion.site/GitBroski-Broski-for-your-Github-Workflow-286e41747653800a9cc4f7b014c6cf51)
+> Project Notion Page: https://gratis-neon-644.notion.site/GitBroski-Broski-for-your-Github-Workflow-286e41747653800a9cc4f7b014c6cf51
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
-- **Node.js** must be installed and configured on your system.
+- Node.js (for npm distribution) or Go (to build locally)
 
 ### Install via npm
 
@@ -92,7 +73,7 @@ npm install -g gitbroski
 3. **Add to PATH (Symbolic Link)**
 		- Command Prompt (Admin):
 			```cmd
-			mklink "C:\Program Files\Git\usr\bin\gitbroski.exe" "%cd%\gitbroski.exe"
+			setx PATH "%PATH%;C:\path\to\your\bin"
 			```
 		- Git Bash (Admin):
 			```bash
